@@ -1,3 +1,4 @@
+import NpxDevpulkit from "../components/Header/NpxDevpulkit";
 import { TypewriterEffectSmoothDemo } from "../components/Typewriter";
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
         Hey, I am Pulkit
       </p>
       <TypewriterEffectSmoothDemo />
+      <NpxDevpulkit />
     </div>
   );
 }
