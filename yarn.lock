@@ -224,6 +224,11 @@
     "@babel/helper-validator-identifier" "^7.24.7"
     to-fast-properties "^2.0.0"
 
+"@darkroom.engineering/tempus@^0.0.46":
+  version "0.0.46"
+  resolved "https://registry.npmjs.org/@darkroom.engineering/tempus/-/tempus-0.0.46.tgz"
+  integrity sha512-s5vav3KMHYezvUCl4ee5epg0oimF6M8C9gAaKxFnFaTvX2q3ywFDryIv6XLd0mRFUt3S1uHDJqKaiEcs2ZVSvw==
+
 "@esbuild/win32-x64@0.21.5":
   version "0.21.5"
   resolved "https://registry.npmjs.org/@esbuild/win32-x64/-/win32-x64-0.21.5.tgz"
@@ -1298,6 +1303,13 @@ keyv@^4.5.3:
   dependencies:
     json-buffer "3.0.1"
 
+lenis@^1.1.4:
+  version "1.1.4"
+  resolved "https://registry.npmjs.org/lenis/-/lenis-1.1.4.tgz"
+  integrity sha512-VNbsie0YaP6946QpYw/n5zxyPyLKuqPO28T8FK7YBzIkG3FyfwEZkpPKqt6eQZJ9ofjxkfUM+A8YtPfNlTbSlQ==
+  dependencies:
+    "@darkroom.engineering/tempus" "^0.0.46"
+
 levn@^0.4.1:
   version "0.4.1"
   resolved "https://registry.npmjs.org/levn/-/levn-0.4.1.tgz"
@@ -1618,7 +1630,7 @@ queue-microtask@^1.2.2:
   resolved "https://registry.npmjs.org/queue-microtask/-/queue-microtask-1.2.3.tgz"
   integrity sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==
 
-react-dom@^18.0.0, react-dom@^18.3.1, react-dom@>=16.8:
+react-dom@^18.0.0, react-dom@^18.3.1, react-dom@>=16.8, react-dom@>=17.0.0:
   version "18.3.1"
   resolved "https://registry.npmjs.org/react-dom/-/react-dom-18.3.1.tgz"
   integrity sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw==
@@ -1646,7 +1658,7 @@ react-router@6.24.0:
   dependencies:
     "@remix-run/router" "1.17.0"
 
-react@^18.0.0, react@^18.3.1, react@>=16.8:
+react@^18.0.0, react@^18.3.1, react@>=16.8, react@>=17.0.0:
   version "18.3.1"
   resolved "https://registry.npmjs.org/react/-/react-18.3.1.tgz"
   integrity sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==

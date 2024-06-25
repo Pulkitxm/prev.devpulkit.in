@@ -11,9 +11,6 @@
   "build": {
     "env": {
       "VERCEL_BUILDER_NPM_RUN_BUILD": "npm install && npm run build"
-    },
-    "preinstall": {
-      "npm": "npx npm-force-resolutions"
     }
   }
 }
