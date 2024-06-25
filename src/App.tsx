@@ -13,12 +13,15 @@ export default function App() {
       requestAnimationFrame(raf);
     }
     requestAnimationFrame(raf);
+    return () => {
+      lenis.destroy();
+    };
   }, []);
   return (
-    <div className="h-full w-full">
+    <>
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>
-    </div>
+    </>
   );
 }

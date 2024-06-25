@@ -3,11 +3,7 @@
 @tailwind utilities;
 
 body {
-  height: 100svh;
   width: 100vw;
+  background-color: #000;
   overflow-x: hidden;
-}
-#root {
-  height: 100%;
-  width: 100%;
 }
