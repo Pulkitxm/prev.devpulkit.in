@@ -18,10 +18,10 @@ export default function App() {
     };
   }, []);
   return (
-    <>
+    <div className="bg-black">
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>
-    </>
+    </div>
   );
 }

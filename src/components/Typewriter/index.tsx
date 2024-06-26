@@ -10,7 +10,6 @@ export function TypewriterEffectSmoothDemo() {
     },
     {
       text: "awesome",
-      className: "text-purple-500 dark:text-blue-500",
     },
     {
       text: "web",

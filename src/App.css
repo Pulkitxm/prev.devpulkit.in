@@ -2,8 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --black: #000000;
+}
+
 body {
   width: 100vw;
-  background-color: #000;
+  background-color: var(--black, #000000);
   overflow-x: hidden;
 }
