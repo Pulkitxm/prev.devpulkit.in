@@ -7,7 +7,6 @@ export default function Home() {
     <>
       <HeroSection />
       <About />
-      <div className="h-screen bg-red-500" />
       <Contact />
     </>
   );

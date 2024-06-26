@@ -10,7 +10,7 @@ export default function NpxDevpulkit() {
   }
   return (
     <div
-      className="mt-20 rounded-xl px-10 py-8 bg-white hover:bg-gray-200 font-serif text-xl md:text-2xl flex items-center cursor-pointer"
+      className="mt-10 md:mt-20 rounded-xl px-9 md:px-10 py-6 md:py-8 bg-white hover:bg-gray-200 font-serif text-lg md:text-2xl flex items-center cursor-pointer"
       onClick={handleCopy}
     >
       npx devpulkit <IconClipboard copied={copied} />
@@ -20,7 +20,7 @@ export default function NpxDevpulkit() {
 
 function IconClipboard({ copied }: { copied: boolean }) {
   return (
-    <svg fill="currentColor" viewBox="0 0 16 16" className="ml-2 h-8 w-8">
+    <svg fill="currentColor" viewBox="0 0 16 16" className="ml-2 h-5 w-5 md:h-8 md:w-8">
       {copied && (
         <path
           fillRule="evenodd"
