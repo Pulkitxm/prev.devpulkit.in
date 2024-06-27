@@ -20,7 +20,7 @@ const projects: {
     title: "Whiteboard Application (Canvas API)",
     description:
       "A Whiteboard app built with React, TypeScript, Express, and MongoDB, enabling creative drawing, saving, and updating. Features include JWT authentication, undo/redo with keyboard shortcuts, and download options for drawings in multiple formats. Optimized for performance and open for contributions.",
-    link: "https://github.com/Pulkitxm/leetclone",
+    link: "https://github.com/Pulkitxm/whiteboard",
     image: whiteboardImg,
   },
   {
