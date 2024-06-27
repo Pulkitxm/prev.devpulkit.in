@@ -4,7 +4,7 @@ const words = `I'm Pulkit, a technology enthusiast with a passion for exploring 
 
 export default function TextGenerateEffectDemo() {
   return (
-    <div className="bg-black text-white py-10 md:py-40 flex flex-col items-center justify-center">
+    <div id="about" className="bg-black text-white py-10 md:py-40 flex flex-col items-center justify-center">
       <h1 className="text-2xl md:text-4xl font-bold mb-10">A Bit About me</h1>
       <div className=" w-[85%] md:w-[70%] mx-auto opacity-70">
         <TextGenerateEffect className="text-center" words={words} />

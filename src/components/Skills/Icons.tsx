@@ -423,9 +423,9 @@ export function IconAwsS3() {
       <g
         id="Icon-Architecture/64/Arch_Amazon-Simple-Storage-Service_64"
         stroke="none"
-        stroke-width="1"
+        strokeWidth="1"
         fill="none"
-        fill-rule="evenodd"
+        fillRule="evenodd"
       >
         <g id="Rectangle" fill="url(#linearGradient-1)">
           <rect x="0" y="0" width="80" height="80"></rect>
@@ -454,9 +454,9 @@ export function IconAwsEC2() {
       <g
         id="Icon-Architecture/64/Arch_Amazon-EC2_64"
         stroke="none"
-        stroke-width="1"
+        strokeWidth="1"
         fill="none"
-        fill-rule="evenodd"
+        fillRule="evenodd"
       >
         <g id="Icon-Architecture-BG/64/Compute" fill="url(#linearGradient-1)">
           <rect id="Rectangle" x="0" y="0" width="80" height="80"></rect>
@@ -480,9 +480,9 @@ export function IconAwsCloudFront() {
       <g
         id="Icon-Architecture/64/Arch_Amazon-CloudFront_64"
         stroke="none"
-        stroke-width="1"
+        strokeWidth="1"
         fill="none"
-        fill-rule="evenodd"
+        fillRule="evenodd"
       >
         <g
           id="Icon-Architecture-BG/64/Networking-Content-Delivery"
@@ -515,8 +515,8 @@ export function AzureVm() {
           y2="1.02"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0" stop-color="#f1f1f1" />
-          <stop offset=".82" stop-color="#f1f1f1" />
+          <stop offset="0" stopColor="#f1f1f1" />
+          <stop offset=".82" stopColor="#f1f1f1" />
         </linearGradient>
         <linearGradient
           id="b"
@@ -526,8 +526,8 @@ export function AzureVm() {
           y2="13.02"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0" stop-color="#f1f1f1" />
-          <stop offset=".98" stop-color="#f1f1f1" />
+          <stop offset="0" stopColor="#f1f1f1" />
+          <stop offset=".98" stopColor="#f1f1f1" />
         </linearGradient>
       </defs>
       <rect x="-.14" y="1.02" width="18" height="12" rx=".6" fill="#f1f1f1" />

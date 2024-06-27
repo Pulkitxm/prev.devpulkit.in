@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 export default function GridBackground() {
-  const param = 50;
+  const param = 70;
   const [noOfBoxes, setNoOfBoxes] = useState({
     rows: Math.floor(window.innerHeight / param),
     columns: Math.floor(window.innerWidth / param),
