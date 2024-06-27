@@ -1,58 +1,103 @@
 import { useCallback, useRef, useState } from "react";
 import "./Button.css";
 import { Link } from "react-router-dom";
+import emailjs from "@emailjs/browser";
 
 export default function ContactMe() {
+  const envVars = import.meta.env;
+  const serviceId = envVars.VITE_EMAIL_JS_SERVICE_ID,
+    publicKey = envVars.VITE_EMAIL_JS_PUBLIC_KEY,
+    templateId = envVars.VITE_EMAIL_JS_TEMPLATE_ID;
   const [formInputs, setFormInputs] = useState({
     name: "",
     email: "",
     message: "",
   });
   const submitButtonRef = useRef<HTMLButtonElement>(null);
-  const sendMessage = useCallback(
+  const sendMessage = useCallback(() => {
+    emailjs.send(
+      serviceId,
+      templateId,
+      {
+        message: formInputs.message,
+        from_name: formInputs.name,
+        sender_email: formInputs.email,
+      },
+      {
+        publicKey: publicKey,
+      }
+    );
+  }, [formInputs, publicKey, serviceId, templateId]);
+  const handleSendMessage = useCallback(
     (e: React.FormEvent) => {
       e.preventDefault();
       if (!formInputs.name || !formInputs.email || !formInputs.message) return;
-      console.log(formInputs);
       const btn = submitButtonRef.current!;
+      if (btn.querySelector("#btnText")!.textContent === "Thanks") return;
       btn.classList.add("active");
       btn.querySelector("#btnText")!.textContent = "Thanks";
+      sendMessage();
     },
-    [formInputs]
+    [formInputs, sendMessage]
   );
   return (
     <div className="h-full w-full flex flex-col md:flex-row justify-center items-center lg:space-x-20 px-12">
-      <div className="pt-20 md:p-0 xl:mr-10 w-[90%] lg:w-[100px] xl:w-auto text-white text-xl">
+      <div className="pt-20 md:p-0 xl:mr-10 w-[90%] lg:w-[200px] xl:w-auto text-white text-xl">
         <h1 className="text-3xl lg:text-4xl 2xl:text-5xl font-bold opacity-70 w-full text-start mb-4">
           Contact details
         </h1>
         <Link
           to={"mailto:kpulkit15234@gmail.com"}
-          className="my-3 2xl:text-2xl"
           aria-label="Email me at"
+          className="my-3 2xl:text-2xl hover:opacity-80 select-none cursor-pointer"
         >
           kpulkit15234@gmail.com
         </Link>
         <div className="flex space-x-4 my-2">
-          <Link to={"https://www.facebook.com/Pulkit.fb"} target="_blank" aria-label="Facebook">
+          <Link
+            to={"https://www.facebook.com/Pulkit.fb"}
+            target="_blank"
+            aria-label="Facebook"
+            className="hover:opacity-80 select-none cursor-pointer"
+          >
             <IconFacebook />
           </Link>
-          <Link to={"https://www.instagram.com/teckypulkit"} target="_blank" aria-label="Instagram">
+          <Link
+            to={"https://www.instagram.com/teckypulkit"}
+            target="_blank"
+            aria-label="Instagram"
+            className="hover:opacity-80 select-none cursor-pointer"
+          >
             <IconInstagram />
           </Link>
-          <Link to={"https://twitter.com/devpulkitt"} target="_blank" aria-label="Twitter">
+          <Link
+            to={"https://twitter.com/devpulkitt"}
+            target="_blank"
+            aria-label="Twitter"
+            className="hover:opacity-80 select-none cursor-pointer"
+          >
             <IconTwitter />
           </Link>
-          <Link to={"http://www.linkedin.com/in/pulkit-dce"} target="_blank" aria-label="LinkedIn">
+          <Link
+            to={"http://www.linkedin.com/in/pulkit-dce"}
+            target="_blank"
+            aria-label="LinkedIn"
+            className="hover:opacity-80 select-none cursor-pointer"
+          >
             <IconBxlLinkedin />
           </Link>
-          <Link to={"https://github.com/Pulkitxm"} target="_blank" aria-label="Github">
+          <Link
+            to={"https://github.com/Pulkitxm"}
+            target="_blank"
+            aria-label="Github"
+            className="hover:opacity-80 select-none cursor-pointer"
+          >
             <IconGithub />
           </Link>
         </div>
       </div>
       <form
-        onSubmit={sendMessage}
+        onSubmit={handleSendMessage}
         className="my-10 md:ml-10 xl:my-0 h-[800px] md:h-[500px] w-[90%] lg:w-[700px] bg-white flex flex-col items-end rounded-2xl xl:rounded-3xl overflow-hidden p-5"
       >
         <h1 className="text-xl lg:text-2xl font-bold opacity-70 w-full text-start mb-2">
