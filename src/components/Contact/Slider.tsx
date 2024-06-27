@@ -12,7 +12,7 @@ export default function Slider() {
     <div ref={sliderContainer} className="w-screen overflow-hidden text-white text-2xl md:text-6xl my-40 md:my-50">
       <MultiplePhrases
         src="Full Stack Developement Software As A Service"
-        left={-12}
+        left={-120}
         progress={scrollYProgress}
         direction={"left"}
       />
@@ -46,7 +46,7 @@ function MultiplePhrases({
   );
   return (
     <motion.div
-      className="flex whitespace-nowrap space-x-10 opacity-50 relative my-3 md:my-7"
+      className="flex whitespace-nowrap space-x-3 opacity-50 relative my-3 md:my-7"
       style={{ left, x: translateX }}
     >
       <Phrase src={src} />

@@ -11,7 +11,7 @@ export default function Skills() {
       items: AllSkills.libAndFrameworks,
     },
     {
-      name: "Databases asd ORMs",
+      name: "Databases and ORMs",
       items: AllSkills.databasesAndOrms,
     },
     {
@@ -26,7 +26,7 @@ export default function Skills() {
   const isTouchDevice = "ontouchstart" in window || navigator.maxTouchPoints;
   return (
     <div id="skills" className="text-white flex flex-col items-center justify-center my-10">
-      <h1 className="text-3xl lg:text-5xl font-bold mb-5">My Techincal Skills</h1>
+      <h1 className="text-3xl lg:text-5xl font-bold mb-5">My Technical Skills</h1>
       <div className="w-full flex flex-col items-center justify-center my-5 px-0">
         {displayItems.map((displayItem, index) => {
           return (

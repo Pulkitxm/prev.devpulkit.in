@@ -427,7 +427,7 @@ export function IconAwsS3() {
         fill="none"
         fillRule="evenodd"
       >
-        <g id="Rectangle" fill="url(#linearGradient-1)">
+        <g id="Rectangle" fill="#000">
           <rect x="0" y="0" width="80" height="80"></rect>
         </g>
         <g
@@ -458,7 +458,7 @@ export function IconAwsEC2() {
         fill="none"
         fillRule="evenodd"
       >
-        <g id="Icon-Architecture-BG/64/Compute" fill="url(#linearGradient-1)">
+        <g id="Icon-Architecture-BG/64/Compute" fill="#000">
           <rect id="Rectangle" x="0" y="0" width="80" height="80"></rect>
         </g>
         <path
@@ -486,7 +486,7 @@ export function IconAwsCloudFront() {
       >
         <g
           id="Icon-Architecture-BG/64/Networking-Content-Delivery"
-          fill="url(#linearGradient-1)"
+          fill="#000"
         >
           <rect id="Rectangle" x="0" y="0" width="80" height="80"></rect>
         </g>
