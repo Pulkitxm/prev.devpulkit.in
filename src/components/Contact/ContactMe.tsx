@@ -29,23 +29,24 @@ export default function ContactMe() {
         <Link
           to={"mailto:kpulkit15234@gmail.com"}
           className="my-3 2xl:text-2xl"
+          aria-label="Email me at"
         >
           kpulkit15234@gmail.com
         </Link>
         <div className="flex space-x-4 my-2">
-          <Link to={"https://www.facebook.com/Pulkit.fb"} target="_blank">
+          <Link to={"https://www.facebook.com/Pulkit.fb"} target="_blank" aria-label="Facebook">
             <IconFacebook />
           </Link>
-          <Link to={"https://www.instagram.com/teckypulkit"} target="_blank">
+          <Link to={"https://www.instagram.com/teckypulkit"} target="_blank" aria-label="Instagram">
             <IconInstagram />
           </Link>
-          <Link to={"https://twitter.com/devpulkitt"} target="_blank">
+          <Link to={"https://twitter.com/devpulkitt"} target="_blank" aria-label="Twitter">
             <IconTwitter />
           </Link>
-          <Link to={"http://www.linkedin.com/in/pulkit-dce"} target="_blank">
+          <Link to={"http://www.linkedin.com/in/pulkit-dce"} target="_blank" aria-label="LinkedIn">
             <IconBxlLinkedin />
           </Link>
-          <Link to={"https://github.com/Pulkitxm"} target="_blank">
+          <Link to={"https://github.com/Pulkitxm"} target="_blank" aria-label="Github">
             <IconGithub />
           </Link>
         </div>
