@@ -1,16 +1,5 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": { "zeroConfig": true }
-    }
-  ],
-  "routes": [{ "src": "/(.*)", "dest": "/" }],
-  "build": {
-    "env": {
-      "VERCEL_BUILDER_NPM_RUN_BUILD": "npm install && npm run build"
-    }
-  }
+  "rewrites":  [
+    {"source": "/(.*)", "destination": "/"}
+  ]
 }
