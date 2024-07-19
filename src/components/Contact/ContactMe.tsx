@@ -1,13 +1,19 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useCallback, useRef, useState } from "react";
 import "./Button.css";
 import { Link } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 
+const envVars = import.meta.env;
+const serviceId = envVars.VITE_EMAIL_JS_SERVICE_ID,
+  publicKey = envVars.VITE_EMAIL_JS_PUBLIC_KEY,
+  templateId = envVars.VITE_EMAIL_JS_TEMPLATE_ID;
+
+emailjs.init({
+  publicKey,
+});
+
 export default function ContactMe() {
-  const envVars = import.meta.env;
-  const serviceId = envVars.VITE_EMAIL_JS_SERVICE_ID,
-    publicKey = envVars.VITE_EMAIL_JS_PUBLIC_KEY,
-    templateId = envVars.VITE_EMAIL_JS_TEMPLATE_ID;
   const [formInputs, setFormInputs] = useState({
     name: "",
     email: "",
@@ -15,19 +21,15 @@ export default function ContactMe() {
   });
   const submitButtonRef = useRef<HTMLButtonElement>(null);
   const sendMessage = useCallback(() => {
-    emailjs.send(
-      serviceId,
-      templateId,
-      {
+    emailjs
+      .send(serviceId, templateId, {
         message: formInputs.message,
         from_name: formInputs.name,
         sender_email: formInputs.email,
-      },
-      {
-        publicKey: publicKey,
-      }
-    );
-  }, [formInputs, publicKey, serviceId, templateId]);
+      })
+      // @ts-expect-error____
+      .catch((err) => {});
+  }, [formInputs]);
   const handleSendMessage = useCallback(
     (e: React.FormEvent) => {
       e.preventDefault();
