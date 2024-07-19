@@ -67,7 +67,7 @@ export const FloatingNav = ({
             )}
             onClick={navItem.onClick}
           >
-            <span className="block sm:hidden">{navItem.icon}</span>
+            <span className="block">{navItem.icon}</span>
             <span className="hidden sm:block text-sm">{navItem.name}</span>
           </div>
         ))}

@@ -10,8 +10,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <BrowserRouter>
       <>
         <App />
-        <Analytics />
-        <SpeedInsights />
+        <Analytics debug={false} />
+        <SpeedInsights debug={false} />
       </>
     </BrowserRouter>
   </SmoothScrolling>
