@@ -33,7 +33,7 @@ export default function HorizontalSection() {
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["10%", "-90%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["10%", "-100%"]);
 
   const fetchBlogs = useCallback(async (query: string) => {
     const res = await axios.post("https://gql.hashnode.com/", {
