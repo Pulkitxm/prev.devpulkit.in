@@ -1,3 +1,3 @@
 npm run build
-tsc -b
+npx tsc -b
 npm run lint
