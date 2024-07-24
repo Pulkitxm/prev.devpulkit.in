@@ -7,7 +7,7 @@ import { BlogType, validateBlog } from "./types";
 const GET_USER_ARTICLES = `
 query Publication($id: ObjectId = "66213f8be5371b46eac0e05e") {
   publication(id: $id) {
-    posts(first: 3) {
+    posts(first: 4) {
       edges {
         node {
           title
