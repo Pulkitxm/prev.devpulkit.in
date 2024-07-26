@@ -1,29 +1,8 @@
-import axios from "axios";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
 import Blog from "./Blog";
-import { BlogType, validateBlog } from "./types";
-
-const GET_USER_ARTICLES = `
-query Publication($id: ObjectId = "66213f8be5371b46eac0e05e") {
-  publication(id: $id) {
-    posts(first: 4) {
-      edges {
-        node {
-          title
-          url
-          views
-          coverImage {
-            url
-          }
-          publishedAt,
-          readTimeInMinutes
-        }
-      }
-    }
-  }
-}
-`;
+import { BlogType } from "./types";
+import { fetchBlogs } from "./blogs";
 
 export default function HorizontalSection() {
   const [blogs, setBlogs] = useState<BlogType[]>([]);
@@ -35,25 +14,11 @@ export default function HorizontalSection() {
 
   const x = useTransform(scrollYProgress, [0, 1], ["10%", "-100%"]);
 
-  const fetchBlogs = useCallback(async (query: string) => {
-    const res = await axios.post("https://gql.hashnode.com/", {
-      query,
-    });
-    const resp: BlogType[] = [];
-    for (const edge of res.data.data.publication.posts.edges) {
-      const parsedNode = validateBlog.safeParse(edge.node);
-      if (parsedNode.success) {
-        resp.push(parsedNode.data);
-      }
-    }
-    return resp;
-  }, []);
-
   useEffect(() => {
-    fetchBlogs(GET_USER_ARTICLES)
+    fetchBlogs()
       .then((data) => setBlogs(data))
       .finally(() => setLoading(false));
-  }, [fetchBlogs]);
+  }, []);
   if (blogs.length === 0 && !loading) return null;
   return (
     <section ref={targetRef} className="relative h-[300vh] md:h-[400vh]">
