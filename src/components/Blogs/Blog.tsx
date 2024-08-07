@@ -1,15 +1,21 @@
 import { Link } from "react-router-dom";
 import { BlogType } from "./types";
 
-export default function Blog({ blog }: { blog: BlogType }) {
+export default function Blog({
+  blog,
+  authorPicUrl,
+}: {
+  blog: BlogType;
+  authorPicUrl: string;
+}) {
   return (
     <Link
       to={blog.url}
       target="_blank"
-      className="w-[97vw] h-[400px] md:w-[800px] md:h-[500px] mr-10 flex flex-col rounded-xl overflow-hidden bg-[#088395] text-white"
+      className="group w-[97vw] h-[400px] md:w-[800px] md:h-[500px] mr-10 flex flex-col rounded-xl overflow-hidden bg-[#088395] text-white"
     >
       <div
-        className="w-full h-full bg-[#f0f0f0] bg-cover bg-center brightness-90"
+        className="w-full h-full bg-[#f0f0f0] bg-cover bg-center brightness-90 group-hover:brightness-[80%] transition-brightness duration-100"
         style={{ backgroundImage: `url(${blog.coverImage.url})` }}
       ></div>
       <div className="px-3 py-2">
@@ -23,7 +29,7 @@ export default function Blog({ blog }: { blog: BlogType }) {
           <div
             style={{
               backgroundImage:
-                "url(https://cdn.hashnode.com/res/hashnode/image/upload/v1714285006958/M2NOdI53B.jpg?w=72&h=72&fit=crop&crop=faces&auto=compress,format&format=webp)",
+                `url(${authorPicUrl})`,
             }}
             className="rounded-full h-10 w-10 md:h-12 md:w-12 bg-cover bg-center mr-2"
           />

@@ -4,7 +4,10 @@ import Blog from "./Blog";
 import { BlogType } from "./types";
 import { fetchBlogs } from "./blogs";
 
+const { VITE_GITHUB_PROFILE_URL: GITHUB_PROFILE } = import.meta.env;
+
 export default function HorizontalSection() {
+  const [authorPicUrl, setAuthorPicUrl] = useState("");
   const [blogs, setBlogs] = useState<BlogType[]>([]);
   const [loading, setLoading] = useState(true);
   const targetRef = useRef<HTMLDivElement | null>(null);
@@ -16,7 +19,10 @@ export default function HorizontalSection() {
 
   useEffect(() => {
     fetchBlogs()
-      .then((data) => setBlogs(data))
+      .then((data) => {
+        setBlogs(data.blogs);
+        setAuthorPicUrl(data.authorPic ?? GITHUB_PROFILE);
+      })
       .finally(() => setLoading(false));
   }, []);
   if (blogs.length === 0 && !loading) return null;
@@ -31,7 +37,7 @@ export default function HorizontalSection() {
             Read my blogs
           </motion.div>
           {blogs.map((blog, index) => (
-            <Blog key={index} blog={blog} />
+            <Blog key={index} blog={blog} authorPicUrl={authorPicUrl} />
           ))}
         </motion.div>
       </div>

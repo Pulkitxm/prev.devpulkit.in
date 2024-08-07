@@ -4,6 +4,9 @@ import { BlogType, validateBlog } from "./types";
 const GET_USER_ARTICLES = `
 query Publication($id: ObjectId = "66213f8be5371b46eac0e05e") {
   publication(id: $id) {
+    author{
+      profilePicture
+    }
     posts(first: 50) {
       edges {
         node {
@@ -36,5 +39,8 @@ export const fetchBlogs = async () => {
   const blogs = resp
     .sort((a, b) => b.views - a.views)
     .filter((blog) => blog.views !== 0);
-  return blogs.length > 4 ? blogs.slice(0, 4) : blogs;
+  return {
+    blogs: blogs.length > 4 ? blogs.slice(0, 4) : blogs,
+    authorPic: res.data.data.publication.author.profilePicture,
+  };
 };
