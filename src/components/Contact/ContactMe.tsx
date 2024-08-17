@@ -107,7 +107,7 @@ export default function ContactMe() {
         </h1>
         <textarea
           placeholder="Enter your name, email and make your request. I'll be happy to answer you as soon as possible"
-          className="w-full text-xl lg:text-3xl flex-grow border-none focus:outline-none xl:leading-[40px] placeholder:font-semibold"
+          className="w-full h-auto text-base md:text-xl lg:text-3xl flex-grow border-none focus:outline-none xl:leading-[40px] placeholder:font-semibold"
           spellCheck="false"
           value={formInputs.message}
           onChange={(e) =>
@@ -134,7 +134,7 @@ export default function ContactMe() {
             }
           />
         </div>
-        <button ref={submitButtonRef} className="submit-btn">
+        <button ref={submitButtonRef} className="submit-btn mx-auto">
           <p id="btnText">Send</p>
           <div className="check-box">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">

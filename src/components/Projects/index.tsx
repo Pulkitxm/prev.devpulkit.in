@@ -1,13 +1,30 @@
-import { HoverEffect } from "./CardHoverEffect";
-import projects from "./Projects";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import ProjectStack from "./ProjectStack";
+import ProjectCards from "./ProjectCards";
 
 export default function CardHoverEffectDemo() {
+  const [width, setWidth] = useState(window.innerWidth);
+  const showStack = useMemo(() => width > 768, [width]);
+  const handleResize = useCallback(() => {
+    setWidth(window.innerWidth);
+  }, []);
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [handleResize, width]);
+  useEffect(() => {
+    handleResize();
+  }, [handleResize]);
   return (
-    <div className="max-w-5xl mx-auto px-8 text-white" id="projects">
-      <h1 className="text-2xl md:text-4xl font-bold text-center">
+    <div className="text-white" id="projects">
+      <h1
+        className={`text-2xl md:text-4xl font-bold text-center ${
+          showStack ? "" : "mb-10"
+        }`}
+      >
         Some of my Cool Projects
       </h1>
-      <HoverEffect items={projects} />
+      {showStack ? <ProjectStack /> : <ProjectCards />}
     </div>
   );
 }

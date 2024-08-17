@@ -9,7 +9,7 @@ export default function Slider() {
     offset: ["start end", "end start"],
   });
   return (
-    <div ref={sliderContainer} className="w-screen overflow-hidden text-white text-2xl md:text-6xl my-40 md:my-50">
+    <div ref={sliderContainer} className="w-screen overflow-hidden text-white text-2xl md:text-6xl my-10 md:my-28">
       <MultiplePhrases
         src="Full Stack Developement Software As A Service"
         left={-120}

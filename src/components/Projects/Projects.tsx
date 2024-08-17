@@ -1,6 +1,6 @@
+import vidWave from "../../assets/projects/vidwave.png";
 import leetcloneImg from "../../assets/projects/leetclone.png";
 import whiteboardImg from "../../assets/projects/whiteboard.png";
-import blogsImg from "../../assets/projects/blogs.png";
 import tweaker from "../../assets/projects/tweaker.png";
 import useeform from "../../assets/projects/useeform.png";
 
@@ -10,6 +10,13 @@ const projects: {
   link: string;
   image: string;
 }[] = [
+  {
+    title: "VidWave: (HLS Video Streaming)",
+    description:
+      "Vidwave is a video streaming platform inspired by YouTube, allowing users to upload, transcode, stream, and manage video content. This project leverages modern web technologies and cloud services to provide a seamless video sharing experience.",
+    link: "https://github.com/Pulkitxm/vidwave",
+    image: vidWave,
+  },
   {
     title: "useeForm React hook(npm library)",
     description:
@@ -37,13 +44,6 @@ const projects: {
       "A Whiteboard app built with React, TypeScript, Express, and MongoDB, enabling creative drawing, saving, and updating. Features include JWT authentication, undo/redo with keyboard shortcuts, and download options for drawings in multiple formats. Optimized for performance and open for contributions.",
     link: "https://github.com/Pulkitxm/whiteboard",
     image: whiteboardImg,
-  },
-  {
-    title: "Medium Blogging APP (Serverless + In House Text Editor)",
-    description:
-      "A Medium-inspired blogging website using TypeScript and React frontend, Hono.js backend, deployed on Cloudflare Workers. Features include a native text editor with text alignment, image/URL embedding, and horizontal rule functionalities. Available for deployment on AWS and CloudFlare.",
-    link: "https://github.com/Pulkitxm/medium-100xDevs",
-    image: blogsImg,
   },
 ];
 export default projects;
