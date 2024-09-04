@@ -1,8 +1,8 @@
-import vidWave from "../../assets/projects/vidwave.png";
-import leetcloneImg from "../../assets/projects/leetclone.png";
-import whiteboardImg from "../../assets/projects/whiteboard.png";
-import tweaker from "../../assets/projects/tweaker.png";
-import useeform from "../../assets/projects/useeform.png";
+import vidWave from "../../assets/projects/vidwave.webp";
+import leetcloneImg from "../../assets/projects/leetclone.webp";
+import whiteboardImg from "../../assets/projects/whiteboard.webp";
+import tweaker from "../../assets/projects/tweaker.webp";
+import useeform from "../../assets/projects/useeform.webp";
 
 const projects: {
   title: string;

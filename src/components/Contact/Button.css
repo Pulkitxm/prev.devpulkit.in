@@ -33,7 +33,7 @@
 }
 
 .check-box svg path{
-    strokeWidth: 3;
+    stroke-width: 3;
     stroke: #fff;
     stroke-dasharray: 34;
     stroke-dashoffset: 34;
