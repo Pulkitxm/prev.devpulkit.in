@@ -62,21 +62,6 @@ export default function RootLayout({
         {/* Title Tag */}
         <title>Pulkit - Developer</title>
 
-        {/* Structured Data */}
-        <script type="application/ld+json">
-          {`{
-            "@context": "http://schema.org",
-            "@type": "Person",
-            "name": "Pulkit",
-            "jobTitle": "Developer",
-            "url": "https://devpulkit.in",
-            "sameAs": [
-              "http://linkedin.com/in/yourprofile",
-              "http://github.com/yourprofile"
-            ]
-          }`}
-        </script>
-
         <link rel="icon" href="./favicon.png" />
       </head>
       <body className={inter.className}>{children}</body>
