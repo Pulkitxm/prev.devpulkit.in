@@ -1,0 +1,51 @@
+name: Build & Deploy
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Deploy NodeJS app to Vultr
+        uses: appleboy/ssh-action@v0.1.2
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          key: ${{ secrets.SSH_KEY }}
+          username: ${{ secrets.SSH_USERNAME }}
+          script: |
+            set -e
+
+            # Navigate to the project directory
+            if [ -d "/root/devpulkit.in" ]; then
+              rm -rf /root/devpulkit.in
+            fi
+            cd /root
+
+            # Clone the repository
+            git clone https://github.com/pulkitxm/devpulkit.in
+
+            # Ensure Node.js and npm are available
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+            # Install PM2 globally
+            npm install pm2 -g || true
+
+            # Delee the old application if present
+            pm2 delete devpulkit || true
+
+            # Install dependencies
+            cd devpulkit.in
+            npm install
+
+            # Build the project
+            npm run build
+
+            # Restart the application using PM2
+            pm2 start npm --name "devpulkit" -- start
+
+            echo 'Deployment successful to Vultr'
