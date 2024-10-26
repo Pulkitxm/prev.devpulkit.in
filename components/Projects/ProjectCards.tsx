@@ -1,5 +1,5 @@
 import Image from "next/image";
-import projects from "./Projects";
+import projects from "@/app/data/projects";
 import Link from "next/link";
 
 export default function ProjectCards() {

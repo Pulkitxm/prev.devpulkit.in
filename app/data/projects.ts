@@ -1,6 +1,6 @@
+import deployit from "@/assets/projects/deployit.webp";
 import vidWave from "@/assets/projects/vidwave.webp";
 import leetcloneImg from "@/assets/projects/leetclone.webp";
-import whiteboardImg from "@/assets/projects/whiteboard.webp";
 import tweaker from "@/assets/projects/tweaker.webp";
 import useeform from "@/assets/projects/useeform.webp";
 import { StaticImageData } from "next/image";
@@ -11,6 +11,20 @@ const projects: {
   link: string;
   image: StaticImageData;
 }[] = [
+  {
+    title: "Deployit: (Reactjs deployment platform)",
+    description:
+      "DeployIt is an optimized platform for deploying React projects effortlessly. It provides features like easy deployment, private project options, custom URLs, and seamless collaboration. With built-in support for environment variables, global CDN, instant deployments, and robust security, DeployIt ensures your projects are always accessible and secu",
+    link: "https://deployit.live",
+    image: deployit,
+  },
+  {
+    title: "Image Tweaker",
+    description:
+      "A powerful image optimization tool that reduces file sizes while maintaining quality. It supports compression, resizing, and format conversion, utilizing FFmpeg, ImageMagick, and Jimp. Containerized with Docker for easy deployment, it enhances performance across web and mobile applications by optimizing images efficiently.",
+    link: "https://image-tweaker.devpulkit.in/",
+    image: tweaker,
+  },
   {
     title: "VidWave: (HLS Video Streaming)",
     description:
@@ -31,20 +45,6 @@ const projects: {
       "A LeetCode clone using React, Express.js, Redis, and PostgreSQL, providing instant code execution feedback. Includes 15 coding problems, JWT authentication, and scalable server architecture. Room for UI enhancements.",
     link: "https://github.com/Pulkitxm/leetclone",
     image: leetcloneImg,
-  },
-  {
-    title: "Image Tweaker",
-    description:
-      "A powerful image optimization tool that reduces file sizes while maintaining quality. It supports compression, resizing, and format conversion, utilizing FFmpeg, ImageMagick, and Jimp. Containerized with Docker for easy deployment, it enhances performance across web and mobile applications by optimizing images efficiently.",
-    link: "https://github.com/Pulkitxm/image-tweaker",
-    image: tweaker,
-  },
-  {
-    title: "Whiteboard Application (Canvas API)",
-    description:
-      "A Whiteboard app built with React, TypeScript, Express, and MongoDB, enabling creative drawing, saving, and updating. Features include JWT authentication, undo/redo with keyboard shortcuts, and download options for drawings in multiple formats. Optimized for performance and open for contributions.",
-    link: "https://github.com/Pulkitxm/whiteboard",
-    image: whiteboardImg,
   },
 ];
 export default projects;

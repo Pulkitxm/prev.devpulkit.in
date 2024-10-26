@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import projects from "./Projects";
+import projects from "@/app/data/projects";
 import Link from "next/link";
-import { cn } from "../../utils/cn";
+import { cn } from "@/utils/cn";
 import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -65,7 +65,7 @@ export default function ProjectStack() {
               <Image
                 src={project.image}
                 alt="img-1"
-                className="pointer-events-none h-full w-full rounded-xl object-cover"
+                className="pointer-events-none h-full w-full rounded-xl border-2 border-white/70 object-cover"
               />
             </div>
           ))}

@@ -6,7 +6,7 @@ import {
   useScroll,
   useMotionValueEvent,
 } from "framer-motion";
-import { cn } from "../../utils/cn";
+import { cn } from "@/utils/cn";
 
 export const FloatingNav = ({
   navItems,
