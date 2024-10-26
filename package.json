@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "dev:clean": "rm -rf .next && rm -rf node_modules && npm install && npm run dev",
+    "clean": "rm -rf .next && rm -rf node_modules",
+    "dev:clean": "pnpm clean && pnpm install && pnpm run dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",

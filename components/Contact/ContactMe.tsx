@@ -3,7 +3,7 @@
 import { useCallback, useRef, useState } from "react";
 import "./Button.css";
 import Link from "next/link";
-import axios from "axios";
+import { sendEmail } from "@/app/actions/email";
 
 export default function ContactMe() {
   const [formInputs, setFormInputs] = useState({
@@ -20,7 +20,7 @@ export default function ContactMe() {
       if (btn.querySelector("#btnText")!.textContent === "Thanks") return;
       btn.classList.add("active");
       btn.querySelector("#btnText")!.textContent = "Thanks";
-      axios.post("/api/email", {
+      sendEmail({
         from_name: "Pulkit",
         message: "Hello",
         sender_email: "kpulkit15234@gmail.com",

@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
 import Blog from "./Blog";
 import { BlogType } from "./types";
-import { fetchBlogs } from "./blogs";
+import { getBlogs } from "@/app/actions/blogs";
 
 const { VITE_GITHUB_PROFILE_URL: GITHUB_PROFILE } = process.env;
 
@@ -20,7 +20,7 @@ export default function HorizontalSection() {
   const x = useTransform(scrollYProgress, [0, 1], ["10%", "-100%"]);
 
   useEffect(() => {
-    fetchBlogs()
+    getBlogs()
       .then((data) => {
         setBlogs(data.blogs);
         setAuthorPicUrl(data.authorPic ?? GITHUB_PROFILE);

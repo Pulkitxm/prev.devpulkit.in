@@ -1,5 +1,7 @@
+"use server";
+
+import { BlogType, validateBlog } from "@/components/Blogs/types";
 import axios from "axios";
-import { BlogType, validateBlog } from "./types";
 
 const GET_USER_ARTICLES = `
 query Publication($id: ObjectId = "66213f8be5371b46eac0e05e") {
@@ -25,7 +27,7 @@ query Publication($id: ObjectId = "66213f8be5371b46eac0e05e") {
 }
 `;
 
-export const fetchBlogs = async () => {
+export async function getBlogs() {
   const res = await axios.post("https://gql.hashnode.com/", {
     query: GET_USER_ARTICLES,
   });
@@ -43,4 +45,4 @@ export const fetchBlogs = async () => {
     blogs: blogs.length > 4 ? blogs.slice(0, 4) : blogs,
     authorPic: res.data.data.publication.author.profilePicture,
   };
-};
+}
