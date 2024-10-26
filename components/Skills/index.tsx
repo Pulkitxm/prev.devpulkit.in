@@ -24,7 +24,7 @@ export default function Skills() {
   }, []);
 
   const isScreenLarge = useMemo(() => {
-    return windowWidth > 768;
+    return windowWidth > 1024;
   }, [windowWidth]);
 
   return (
