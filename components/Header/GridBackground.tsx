@@ -11,7 +11,7 @@ export default function GridBackground() {
   });
 
   useEffect(() => {
-    if (typeof window == "undefined") return;
+    if (typeof window == "undefined" || !window) return;
 
     const handleResize = () => {
       setNoOfBoxes({

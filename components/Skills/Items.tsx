@@ -5,7 +5,7 @@ import {
   IconAwsEC2,
   IconAwsS3,
   IconBrandBootstrap,
-  IconBxlJavascript,
+  JavaScriptIcon,
   IconCypress,
   IconDocker,
   IconEslint,
@@ -24,7 +24,7 @@ import {
   IconNodejs,
   IconPostgresql,
   IconPrisma,
-  IconPyScopG2,
+  IconPsycopG2,
   IconPython,
   IconReact,
   IconReactNative,
@@ -41,172 +41,233 @@ import {
 
 type Item = {
   name: string;
-  icon: JSX.Element;
+  icon: typeof JavaScriptIcon;
+  url?: string;
 };
 
-export const lanuguages: Item[] = [
+const lanuguages: Item[] = [
   {
     name: "JavaScript",
-    icon: <IconBxlJavascript />,
+    icon: JavaScriptIcon,
+    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
   },
   {
     name: "TypeScript",
-    icon: <IconTypescript />,
+    icon: IconTypescript,
+    url: "https://www.typescriptlang.org",
   },
   {
     name: "Python",
-    icon: <IconPython />,
+    icon: IconPython,
+    url: "https://www.python.org",
   },
   {
     name: "Java",
-    icon: <IconJava />,
+    icon: IconJava,
+    url: "https://www.java.com/en",
   },
   {
     name: "SQL",
-    icon: <IconSQL />,
+    icon: IconSQL,
+    url: "https://www.mysql.com",
   },
 ];
 
-export const libAndFrameworks: Item[] = [
+const libAndFrameworks: Item[] = [
   {
     name: "React",
-    icon: <IconReact />,
+    icon: IconReact,
+    url: "https://react.dev",
   },
   {
     name: "NextJS",
-    icon: <IconNextjs />,
+    icon: IconNextjs,
+    url: "https://nextjs.org",
   },
   {
     name: "Express",
-    icon: <IconExpress />,
+    icon: IconExpress,
+    url: "https://expressjs.com",
   },
   {
     name: "Fast Api",
-    icon: <IconFastApi />,
+    icon: IconFastApi,
+    url: "https://fastapi.tiangolo.com",
   },
   {
     name: "HonoJs(Serverless)",
-    icon: <IconHono />,
+    icon: IconHono,
+    url: "https://hono.dev",
   },
   {
     name: "NodeJs",
-    icon: <IconNodejs />,
+    icon: IconNodejs,
+    url: "https://nodejs.org",
   },
   {
     name: "React Native",
-    icon: <IconReactNative />,
+    icon: IconReactNative,
+    url: "https://reactnative.dev",
   },
   {
     name: "Tailwind Css",
-    icon: <IconTailwindcss />,
+    icon: IconTailwindcss,
+    url: "https://tailwindcss.com",
   },
   {
     name: "Bootstrap",
-    icon: <IconBrandBootstrap />,
+    icon: IconBrandBootstrap,
+    url: "https://getbootstrap.com",
   },
   {
     name: "Material UI",
-    icon: <IconMaterialUi />,
+    icon: IconMaterialUi,
+    url: "https://mui.com/material-ui",
   },
 ];
 
-export const databasesAndOrms: Item[] = [
+const databasesAndOrms: Item[] = [
   {
     name: "MongoDb",
-    icon: <IconMongodb />,
+    icon: IconMongodb,
+    url: "https://www.mongodb.com",
   },
   {
     name: "Postgres",
-    icon: <IconPostgresql />,
-  },
-  {
-    name: "MySql",
-    icon: <IconMysql />,
+    icon: IconPostgresql,
+    url: "https://www.postgresql.org",
   },
   {
     name: "SqlAlchemy",
-    icon: <IconSqlAlechemy />,
+    icon: IconSqlAlechemy,
+    url: "https://www.sqlalchemy.org",
   },
   {
     name: "Redis",
-    icon: <IconRedis />,
+    icon: IconRedis,
+    url: "https://redis.io",
   },
   {
     name: "Alembic",
-    icon: <IconAlembic />,
+    icon: IconAlembic,
+    url: "https://alembic.sqlalchemy.org",
+  },
+  {
+    name: "MySql",
+    icon: IconMysql,
+    url: "https://mysql.com",
   },
   {
     name: "Prisma",
-    icon: <IconPrisma />,
+    icon: IconPrisma,
+    url: "https://www.prisma.io",
   },
   {
     name: "PyScopG2",
-    icon: <IconPyScopG2 />,
+    icon: IconPsycopG2,
+    url: "https://pypi.org/project/psycopg2",
   },
 ];
 
-export const otherTools: Item[] = [
+const otherTools: Item[] = [
   {
     name: "Mapbox",
-    icon: <IconMapbox />,
+    icon: IconMapbox,
+    url: "https://www.mapbox.com",
   },
   {
     name: "Jest",
-    icon: <IconJest />,
+    icon: IconJest,
+    url: "https://jestjs.io",
   },
   {
     name: "Cypress",
-    icon: <IconCypress />,
+    icon: IconCypress,
+    url: "https://www.cypress.io",
   },
   {
     name: "React Query",
-    icon: <IconReactquery />,
+    icon: IconReactquery,
+    url: "https://tanstack.com/query/v3",
   },
   {
     name: "GraphQl",
-    icon: <IconGraphql />,
+    icon: IconGraphql,
+    url: "https://graphql.org",
   },
   {
     name: "Github Actions",
-    icon: <IconGithubactions />,
+    icon: IconGithubactions,
+    url: "https://github.com/features/actions",
   },
   {
     name: "Serverless",
-    icon: <IconServerless />,
+    icon: IconServerless,
   },
   {
     name: "EsLint",
-    icon: <IconEslint />,
+    icon: IconEslint,
+    url: "https://eslint.org",
   },
   {
     name: "Redux",
-    icon: <IconRedux />,
+    icon: IconRedux,
+    url: "https://redux.js.org",
   },
   {
     name: "Recoil",
-    icon: <IconRecoil />,
+    icon: IconRecoil,
+    url: "https://recoiljs.org",
   },
 ];
 
-export const platforms: Item[] = [
+const platforms: Item[] = [
   {
     name: "AWS S3",
-    icon: <IconAwsS3 />,
+    icon: IconAwsS3,
+    url: "https://aws.amazon.com/s3",
   },
   {
     name: "AWS EC2",
-    icon: <IconAwsEC2 />,
+    icon: IconAwsEC2,
+    url: "https://aws.amazon.com/pm/ec2",
   },
   {
     name: "AWS CloudFront",
-    icon: <IconAwsCloudFront />,
+    icon: IconAwsCloudFront,
+    url: "https://aws.amazon.com/cloudfront",
   },
   {
     name: "Azure VM",
-    icon: <AzureVm />,
+    icon: AzureVm,
+    url: "https://azure.microsoft.com/en-in/free/virtual-machines/search",
   },
   {
     name: "Docker",
-    icon: <IconDocker />,
+    icon: IconDocker,
+    url: "https://www.docker.com",
+  },
+];
+
+export const displayItems = [
+  {
+    name: "Languages",
+    items: lanuguages,
+  },
+  {
+    name: "Libraries and Framworks",
+    items: libAndFrameworks,
+  },
+  {
+    name: "Databases and ORMs",
+    items: databasesAndOrms,
+  },
+  {
+    name: "Other Tools",
+    items: otherTools,
+  },
+  {
+    name: "Platforms",
+    items: platforms,
   },
 ];

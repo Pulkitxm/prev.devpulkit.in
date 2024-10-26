@@ -63,18 +63,16 @@ export const FloatingNav = ({
           <div
             key={`link=${idx}`}
             className={cn(
-              "relative flex cursor-pointer select-none items-center space-x-1 p-2 text-neutral-600 hover:text-neutral-500 dark:text-neutral-50 dark:hover:text-neutral-300",
+              "group relative flex cursor-pointer select-none items-center space-x-1 p-2",
             )}
             onClick={navItem.onClick}
           >
             <span className="block">{navItem.icon}</span>
-            <span className="hidden text-sm sm:block">{navItem.name}</span>
+            <span className="hidden text-sm text-neutral-600 group-hover:text-white sm:block">
+              {navItem.name}
+            </span>
           </div>
         ))}
-        {/* <button className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full">
-          <span>Login</span>
-          <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
-        </button> */}
       </motion.div>
     </AnimatePresence>
   );

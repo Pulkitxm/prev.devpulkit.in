@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { z } from "zod";
 
 export const validateBlog = z.object({
@@ -12,3 +13,8 @@ export const validateBlog = z.object({
 });
 
 export type BlogType = z.infer<typeof validateBlog>;
+
+export enum ICON_SIZE {
+  SMALL = "sm",
+  LARGE = "lg",
+}

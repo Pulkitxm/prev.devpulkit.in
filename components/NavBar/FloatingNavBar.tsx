@@ -21,7 +21,7 @@ export default function FloatingNavBar({ expaned }: { expaned: boolean }) {
         borderRadius: expaned ? "40px" : "9999px",
       }}
       transition={{ duration: 0.3 }}
-      className={`animate-jump-top fixed left-[50%] z-[5000] w-full -translate-x-[50%] shadow-md dark:shadow-lg ${
+      className={`animate-jump-top fixed left-[50%] z-[5000] w-full -translate-x-[50%] shadow-md ${
         expaned
           ? "cursor-pointer select-none border-white/[0.2] shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]"
           : "border-white opacity-75"
@@ -72,7 +72,7 @@ function NavBarContent() {
         <div
           key={`link=${idx}`}
           className={cn(
-            "relative flex cursor-pointer select-none items-center space-x-1 p-2 text-neutral-600 hover:text-neutral-500 dark:text-neutral-50 dark:hover:text-neutral-300",
+            "relative flex cursor-pointer select-none items-center space-x-1 p-2 text-neutral-600 hover:text-neutral-500",
           )}
           onClick={navItem.onClick}
         >
