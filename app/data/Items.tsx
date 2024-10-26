@@ -37,7 +37,7 @@ import {
   IconSqlAlechemy,
   IconTailwindcss,
   IconTypescript,
-} from "./Icons";
+} from "../../lib/skills-Icons";
 
 type Item = {
   name: string;

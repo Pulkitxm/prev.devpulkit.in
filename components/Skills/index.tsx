@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useMemo, useState } from "react";
-import { displayItems } from "./Items";
+import { displayItems } from "../../app/data/Items";
 import {
   Accordion,
   AccordionContent,
@@ -20,6 +20,7 @@ export default function Skills() {
       setWindowWidth(window.innerWidth);
     };
     window.addEventListener("resize", handleResize);
+    handleResize();
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 

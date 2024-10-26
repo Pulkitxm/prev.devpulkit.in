@@ -1,4 +1,4 @@
-import { ICON_SIZE } from "../Blogs/types";
+import { ICON_SIZE } from "../components/Blogs/types";
 
 const getSizeConfig = (size: ICON_SIZE, isSizeLarge: boolean = false) =>
   isSizeLarge
